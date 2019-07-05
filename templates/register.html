@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+</head>
+<body>
+	<h2>Register</h2><br/>
+	<div class = 'container'>
+			<div class = 'row'>
+				<div class = 'col-sm-12'>
+					<form method = 'post' enctype="multipart/form-data">
+						{% csrf_token %}
+						<!-- key name -->
+						<div class = "form-group">
+							<label>Select</label>
+								<select name= 'role'>
+									<option value="0">Select</option>
+									{% for i in data %}
+										<option value="{{ i.id }}">{{ i.role }}</option>
+										{{ i.role }}
+									{% endfor %}
+								</select>
+						</div><br>
+						<div class = "form-group">
+							<label>User Name</label>
+							<input type="text" name="name">
+						</div><br>
+						<div class = "form-group">
+							<label>Email</label>
+							<input type="text" name="email">
+						</div><br>
+						<div class = "form-group">
+							<label>Gender</label>
+							<input type="radio" name="gender" value="Female">Female
+							<input type="radio" name="gender" value="Female">Male
+						</div><br>
+						<div >
+							<input type="submit" class="btn btn-outline-primary" name="submit" value='Register'>
+						</div>
+					</form><br/><br/>
+
+
+</body>
+</html>
